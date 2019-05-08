@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Movie from './Movie';
 import './App.css';
 
-const Movies = [
+/*const Movies = [
   {
     title: 'Avengers: Infinity War',
     poster: 'https://yts.am/assets/images/movies/avengers_infinity_war_2018/medium-cover.jpg'
@@ -15,7 +15,7 @@ const Movies = [
     title: 'Deadpool 2',
     poster: 'https://yts.am/assets/images/movies/deadpool_2_2018/medium-cover.jpg'
   },
-];
+];*/
 
 
 class App extends Component {
