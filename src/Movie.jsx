@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-class Movies extends Component {
+class Movie extends Component {
     render() {
         return(
             <ul>
@@ -13,4 +13,4 @@ class Movies extends Component {
     }
 }
 
-export default Movies;
+export default Movie;
