@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Movie from './Movie';
+import './App.css';
 
 const Movies = [
   {
@@ -21,12 +22,13 @@ class App extends Component {
   state = {};
 
   componentDidMount() {
-    setTimeout(this._getMovie, 3000)
+    this._getMovie();
   }
 
-  _getMovie = () => {
+  _getMovie = async () => {
+    const movies = await this._getAPI();
     this.setState({
-      movies: Movies
+      movies
     });
   };
 
@@ -35,7 +37,7 @@ class App extends Component {
       return (
         <Movie
           title={movie.title}
-          poster={movie.poster}
+          poster={movie.medium_cover_image}
           key={index}
         />
       )
@@ -43,10 +45,18 @@ class App extends Component {
     return movies;
   };
 
+  _getAPI = () => {
+    return fetch('https://yts.am/api/v2/list_movies.json?sort_by=download_count')
+        .then(response => response.json())
+        .then(json => json.data.movies)
+  };
+
   render() {
     return (
       <div className="App">
-        {this.state.movies ? this._renderMovies() : 'Loading...'}
+        <ul>
+          {this.state.movies ? this._renderMovies() : 'Loading...'}
+        </ul>
       </div>
     )
   }

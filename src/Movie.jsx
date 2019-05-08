@@ -3,12 +3,10 @@ import React, {Component} from 'react';
 class Movie extends Component {
     render() {
         return(
-            <ul>
-                <li>
-                    <h2>{this.props.title}</h2>
-                    <img src={this.props.poster} alt=""/>
-                </li>
-            </ul>
+            <li>
+                <img src={this.props.poster} alt=""/>
+                <p>{this.props.title}</p>
+            </li>
         );
     }
 }
